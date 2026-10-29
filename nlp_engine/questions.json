@@ -1,0 +1,114 @@
+{
+    "categories": {
+        "emotional_state": [
+            {
+                "id": "emo_01",
+                "text": "Describe your overall mood over the past 24 hours in detail."
+            },
+            {
+                "id": "emo_02",
+                "text": "How would you explain your current emotional state to a close friend?"
+            },
+            {
+                "id": "emo_03",
+                "text": "What are the most dominant feelings you've noticed lately?"
+            },
+            {
+                "id": "emo_04",
+                "text": "Reflect on a moment today when you felt particularly strong emotion."
+            },
+            {
+                "id": "emo_05",
+                "text": "If your mood today was a color or weather pattern, what would it be and why?"
+            }
+        ],
+        "stress_trigger": [
+            {
+                "id": "str_01",
+                "text": "What was the most challenging situation you faced this week?"
+            },
+            {
+                "id": "str_02",
+                "text": "Describe a specific moment recently that made you feel overwhelmed."
+            },
+            {
+                "id": "str_03",
+                "text": "What recurring thoughts tend to cause you the most tension?"
+            },
+            {
+                "id": "str_04",
+                "text": "Identify one external factor that has been weighing on your mind lately."
+            },
+            {
+                "id": "str_05",
+                "text": "How do you typically react when things don't go as planned?"
+            }
+        ],
+        "positive_reflection": [
+            {
+                "id": "pos_01",
+                "text": "Write about one small victory or positive moment from your day."
+            },
+            {
+                "id": "pos_02",
+                "text": "What is something you are looking forward to in the coming days?"
+            },
+            {
+                "id": "pos_03",
+                "text": "Describe a personal strength that helped you recently."
+            },
+            {
+                "id": "pos_04",
+                "text": "What is one thing you appreciate about yourself right now?"
+            },
+            {
+                "id": "pos_05",
+                "text": "Reflect on a recent interaction that left you feeling positive."
+            }
+        ],
+        "social_support": [
+            {
+                "id": "soc_01",
+                "text": "Who is someone you feel comfortable talking to when you're stressed, and why?"
+            },
+            {
+                "id": "soc_02",
+                "text": "Describe a recent time you felt supported by someone in your life."
+            },
+            {
+                "id": "soc_03",
+                "text": "How do your social interactions impact your daily energy levels?"
+            },
+            {
+                "id": "soc_04",
+                "text": "What does a 'supportive environment' look like to you?"
+            },
+            {
+                "id": "soc_05",
+                "text": "Reflect on a conversation that made you feel understood recently."
+            }
+        ],
+        "cognitive_changes": [
+            {
+                "id": "cog_01",
+                "text": "Have you noticed any changes in your ability to focus or stay organized lately?"
+            },
+            {
+                "id": "cog_02",
+                "text": "Describe your thought patterns when you are trying to make a decision."
+            },
+            {
+                "id": "cog_03",
+                "text": "Do you find yourself dwelling on certain thoughts more than usual? Explain."
+            },
+            {
+                "id": "cog_04",
+                "text": "How has your mental clarity felt over the last few days?"
+            },
+            {
+                "id": "cog_05",
+                "text": "Reflect on how your perspective on a specific problem has shifted recently."
+            }
+        ]
+    }
+}

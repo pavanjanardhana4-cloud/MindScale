@@ -1,0 +1,929 @@
+{
+    "questionnaires": [
+        {
+            "id": "depression_phq9",
+            "title": "Depression Assessment (PHQ-9)",
+            "category": "Mental health",
+            "scoring": "sum",
+            "composite_weight": 0.25,
+            "risk_bands": [
+                {
+                    "min": 0,
+                    "max": 4,
+                    "label": "Minimal"
+                },
+                {
+                    "min": 5,
+                    "max": 9,
+                    "label": "Mild"
+                },
+                {
+                    "min": 10,
+                    "max": 14,
+                    "label": "Moderate"
+                },
+                {
+                    "min": 15,
+                    "max": 19,
+                    "label": "Moderately Severe"
+                },
+                {
+                    "min": 20,
+                    "max": 27,
+                    "label": "Severe"
+                }
+            ],
+            "questions": [
+                {
+                    "id": "q1",
+                    "text": "Little interest or pleasure in doing things",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q2",
+                    "text": "Feeling down, depressed, or hopeless",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q3",
+                    "text": "Trouble falling or staying asleep, or sleeping too much",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q4",
+                    "text": "Feeling tired or having little energy",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q5",
+                    "text": "Poor appetite or overeating",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q6",
+                    "text": "Feeling bad about yourself — or that you are a failure or have let yourself or your family down",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q7",
+                    "text": "Trouble concentrating on things, such as reading the newspaper or watching television",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q8",
+                    "text": "Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q9",
+                    "text": "Thoughts that you would be better off dead or of hurting yourself in some way",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "anxiety_gad7",
+            "title": "Anxiety Assessment (GAD-7)",
+            "category": "Mental health",
+            "scoring": "sum",
+            "composite_weight": 0.25,
+            "risk_bands": [
+                {
+                    "min": 0,
+                    "max": 4,
+                    "label": "Minimal"
+                },
+                {
+                    "min": 5,
+                    "max": 9,
+                    "label": "Mild"
+                },
+                {
+                    "min": 10,
+                    "max": 14,
+                    "label": "Moderate"
+                },
+                {
+                    "min": 15,
+                    "max": 21,
+                    "label": "Severe"
+                }
+            ],
+            "questions": [
+                {
+                    "id": "q1",
+                    "text": "Feeling nervous, anxious or on edge",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q2",
+                    "text": "Not being able to stop or control worrying",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q3",
+                    "text": "Worrying too much about different things",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q4",
+                    "text": "Trouble relaxing",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q5",
+                    "text": "Being so restless that it is hard to sit still",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q6",
+                    "text": "Becoming easily annoyed or irritable",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                },
+                {
+                    "id": "q7",
+                    "text": "Feeling afraid as if something awful might happen",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Not at all",
+                            "value": 0
+                        },
+                        {
+                            "label": "Several days",
+                            "value": 1
+                        },
+                        {
+                            "label": "More than half the days",
+                            "value": 2
+                        },
+                        {
+                            "label": "Nearly every day",
+                            "value": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "stress_pss10",
+            "title": "Perceived Stress Scale (PSS-10)",
+            "category": "Mental health",
+            "scoring": "sum",
+            "composite_weight": 0.20,
+            "risk_bands": [
+                {
+                    "min": 0,
+                    "max": 13,
+                    "label": "Low Stress"
+                },
+                {
+                    "min": 14,
+                    "max": 26,
+                    "label": "Moderate Stress"
+                },
+                {
+                    "min": 27,
+                    "max": 40,
+                    "label": "High Stress"
+                }
+            ],
+            "questions": [
+                {
+                    "id": "q1",
+                    "text": "How often have you been upset because of something that happened unexpectedly?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 0
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 1
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 3
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "q2",
+                    "text": "How often have you felt that you were unable to control the important things in your life?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 0
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 1
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 3
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "q3",
+                    "text": "How often have you felt nervous and \"stressed\"?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 0
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 1
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 3
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "q4",
+                    "text": "How often have you felt confident about your ability to handle your personal problems?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 4
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 3
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 1
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "q5",
+                    "text": "How often have you felt that things were going your way?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 4
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 3
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 1
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "q6",
+                    "text": "How often have you found that you could not cope with all the things that you had to do?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 0
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 1
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 3
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "q7",
+                    "text": "How often have you been able to control irritations in your life?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 4
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 3
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 1
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "q8",
+                    "text": "How often have you felt that you were on top of things?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 4
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 3
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 1
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "q9",
+                    "text": "How often have you been angered because of things that were outside of your control?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 0
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 1
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 3
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "q10",
+                    "text": "How often have you felt difficulties were piling up so high that you could not overcome them?",
+                    "type": "likert",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Never",
+                            "value": 0
+                        },
+                        {
+                            "label": "Almost Never",
+                            "value": 1
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Fairly Often",
+                            "value": 3
+                        },
+                        {
+                            "label": "Very Often",
+                            "value": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "burnout_student",
+            "title": "Student Burnout Inventory",
+            "category": "Academic",
+            "scoring": "weighted_sum",
+            "composite_weight": 0.15,
+            "risk_bands": [
+                {
+                    "min": 0,
+                    "max": 15,
+                    "label": "Low Risk"
+                },
+                {
+                    "min": 16,
+                    "max": 30,
+                    "label": "Moderate Risk"
+                },
+                {
+                    "min": 31,
+                    "max": 40,
+                    "label": "High Risk"
+                }
+            ],
+            "questions": [
+                {
+                    "id": "q1",
+                    "text": "How exhausted do you feel by your studies?",
+                    "type": "slider",
+                    "required": true,
+                    "weight": 1.5,
+                    "min_val": 1,
+                    "max_val": 5
+                },
+                {
+                    "id": "q2",
+                    "text": "How often do you feel you lack interest in your studies?",
+                    "type": "slider",
+                    "required": true,
+                    "weight": 1.2,
+                    "min_val": 1,
+                    "max_val": 5
+                },
+                {
+                    "id": "q3",
+                    "text": "How often do you doubt the value of your studies?",
+                    "type": "slider",
+                    "required": true,
+                    "weight": 1.0,
+                    "min_val": 1,
+                    "max_val": 5
+                },
+                {
+                    "id": "q4",
+                    "text": "How often do you feel inadequate as a student?",
+                    "type": "slider",
+                    "required": true,
+                    "weight": 1.0,
+                    "min_val": 1,
+                    "max_val": 5
+                },
+                {
+                    "id": "q5",
+                    "text": "Do you feel overwhelmed by your academic workload?",
+                    "type": "radio",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Yes",
+                            "value": 5
+                        },
+                        {
+                            "label": "No",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "q6",
+                    "text": "Do you feel like you are underperforming?",
+                    "type": "radio",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Always",
+                            "value": 5
+                        },
+                        {
+                            "label": "Sometimes",
+                            "value": 2
+                        },
+                        {
+                            "label": "Never",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "q7",
+                    "text": "Do you have physical symptoms (headaches, etc.) related to study stress?",
+                    "type": "radio",
+                    "required": true,
+                    "weight": 1.0,
+                    "options": [
+                        {
+                            "label": "Frequently",
+                            "value": 5
+                        },
+                        {
+                            "label": "Rarely",
+                            "value": 1
+                        },
+                        {
+                            "label": "None",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "q8",
+                    "text": "Have you considered taking a break or quitting your studies?",
+                    "type": "radio",
+                    "required": true,
+                    "weight": 2.0,
+                    "options": [
+                        {
+                            "label": "Yes, often",
+                            "value": 10
+                        },
+                        {
+                            "label": "Occasionally",
+                            "value": 5
+                        },
+                        {
+                            "label": "No",
+                            "value": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

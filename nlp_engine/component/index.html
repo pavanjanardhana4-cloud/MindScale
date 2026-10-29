@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+        }
+
+        #nlp-wizard {
+            color: #e5e7eb;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #050816;
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        #progress-container {
+            margin-bottom: 25px;
+        }
+
+        .label-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            color: #9ca3af;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 6px;
+            background: #1f2933;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin: 0 0 15px 0;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #f3f4f6;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            background: #020617;
+            color: #f3f4f6;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 14px;
+            padding: 15px;
+            font-size: 1.05rem;
+            outline: none;
+            resize: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #char-count {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        button {
+            background: linear-gradient(135deg, #38bdf8, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 999px;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transition: transform 0.1s, opacity 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            opacity: 0.95;
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #results-screen {
+            text-align: center;
+            padding: 50px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nlp-wizard">
+        <div id="progress-container">
+            <div class="label-row">
+                <span id="step-label">Assessment 1 of 5</span>
+                <span>⏱️ Est. 4-5 mins</span>
+            </div>
+            <div class="progress-track">
+                <div id="progress-bar" style="width: 20%;"></div>
+            </div>
+        </div>
+
+        <div id="question-view">
+            <h3 id="question-text">Loading question...</h3>
+            <textarea id="nlp_input" placeholder="Reflect on this question..."></textarea>
+
+            <div class="footer">
+                <span id="char-count">Words: 0</span>
+                <button id="next_btn">Next Question →</button>
+            </div>
+        </div>
+
+        <div id="results-screen" style="display: none;">
+            <h2 style="color: #38bdf8;">Assessment Submitted!</h2>
+            <p style="color: #9ca3af;">Analyzing your behavioral and linguistic patterns...</p>
+        </div>
+    </div>
+
+    <script>
+        // --- Streamlit Component Protocol ---
+        let questions = [];
+
+        function sendToStreamlit(type, data) {
+            window.parent.postMessage({
+                isStreamlitMessage: true,
+                type: type,
+                ...data
+            }, "*");
+        }
+
+        function setComponentValue(value) {
+            sendToStreamlit("streamlit:setComponentValue", { value: value });
+        }
+
+        function setFrameHeight(height) {
+            sendToStreamlit("streamlit:setFrameHeight", { height: height });
+        }
+
+        function onStreamlitMessage(event) {
+            if (event.data.type === "streamlit:render") {
+                const args = event.data.args;
+                questions = args.questions || [];
+                if (questions.length > 0) {
+                    initWizard();
+                }
+            }
+        }
+
+        window.addEventListener("message", onStreamlitMessage);
+
+        // Notify Streamlit that the component is ready
+        sendToStreamlit("streamlit:componentReady", { apiVersion: 1 });
+
+        // --- Wizard Logic ---
+        let currentIdx = 0;
+        let results = [];
+        let currentEvents = [];
+
+        function initWizard() {
+            const textarea = document.getElementById('nlp_input');
+            const nextBtn = document.getElementById('next_btn');
+
+            // Clean up old listeners if any (though usually reloads)
+            const newTextarea = textarea.cloneNode(true);
+            textarea.parentNode.replaceChild(newTextarea, textarea);
+
+            const newNextBtn = nextBtn.cloneNode(true);
+            nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+
+            newTextarea.addEventListener('keydown', (e) => {
+                currentEvents.push({ type: 'keydown', key: e.key, ts: Date.now() });
+            });
+
+            newTextarea.addEventListener('keyup', (e) => {
+                currentEvents.push({ type: 'keyup', key: e.key, ts: Date.now() });
+            });
+
+            newTextarea.addEventListener('input', () => {
+                const text = newTextarea.value.trim();
+                const words = text ? text.split(/\s+/).length : 0;
+                document.getElementById('char-count').innerText = `Words: ${words}`;
+            });
+
+            newNextBtn.addEventListener('click', () => {
+                const text = newTextarea.value.trim();
+                if (!text) {
+                    alert("Please provide a response.");
+                    return;
+                }
+
+                results.push({
+                    question_id: questions[currentIdx].id,
+                    text: text,
+                    events: currentEvents
+                });
+
+                if (currentIdx < questions.length - 1) {
+                    currentIdx++;
+                    renderStep();
+                } else {
+                    finalize();
+                }
+            });
+
+            renderStep();
+        }
+
+        function renderStep() {
+            const q = questions[currentIdx];
+            document.getElementById('question-text').innerText = q.text;
+            document.getElementById('step-label').innerText = `Assessment ${currentIdx + 1} of ${questions.length}`;
+            document.getElementById('progress-bar').style.width = `${((currentIdx + 1) / questions.length) * 100}%`;
+            document.getElementById('nlp_input').value = "";
+            document.getElementById('char-count').innerText = "Words: 0";
+            currentEvents = [];
+
+            if (currentIdx === questions.length - 1) {
+                document.getElementById('next_btn').innerText = "Submit Assessment ✓";
+            }
+
+            // Auto-adjust height
+            setFrameHeight(document.body.scrollHeight + 20);
+        }
+
+        function finalize() {
+            document.getElementById('question-view').style.display = 'none';
+            document.getElementById('results-screen').style.display = 'block';
+            setComponentValue(results);
+            setFrameHeight(200);
+        }
+    </script>
+</body>
+
+</html>
